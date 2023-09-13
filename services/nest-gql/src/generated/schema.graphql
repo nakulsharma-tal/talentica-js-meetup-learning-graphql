@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ArticleType {
+  author: AuthorType!
+  createdAt: DateTime!
+  description: String!
+  id: ID!
+  tags: [String!]!
+  title: String!
+  urls: [String!]!
+}
+
+type AuthorType {
+  id: ID!
+  name: String!
+}
+
+input CreateArticleInput {
+  authorId: ID!
+  description: String!
+  tags: [String!]!
+  title: String!
+  urls: [String!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createArticle(input: CreateArticleInput!): ArticleType!
+  createAuthor(name: String!): AuthorType!
+  deleteArticle(id: ID!): ArticleType!
+}
+
+type Query {
+  allArticles: [ArticleType!]!
+  allAuthors: [AuthorType!]!
+  article(id: ID!): ArticleType!
+  author(id: ID!): AuthorType!
+}

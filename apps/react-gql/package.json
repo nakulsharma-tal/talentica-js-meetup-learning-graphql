@@ -1,0 +1,48 @@
+{
+  "name": "@tal-js-meetup/react-gql",
+  "version": "0.0.0",
+  "description": "A simple ReactJS app created with Vite to demonstrate the use of GraphQL in ReactJS environment.",
+  "author": "Nakul Sharma",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start:dev": "vite",
+    "build": "tsc && rushx graphql:generate && vite build",
+    "graphql:generate": "graphql-codegen",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.12",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.5",
+    "graphql": "^16.8.0",
+    "graphql-request": "^5.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.46.1",
+    "react-router-dom": "^6.15.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^3.3.0",
+    "@graphql-codegen/typescript": "^3.0.1",
+    "@graphql-codegen/typescript-apollo-client-helpers": "^2.2.6",
+    "@graphql-codegen/typescript-graphql-request": "^5.0.0",
+    "@graphql-codegen/typescript-operations": "^3.0.1",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "graphql-tag": "^2.12.6",
+    "typescript": "^5.1.3",
+    "vite": "^4.4.5"
+  }
+}

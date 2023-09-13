@@ -1,0 +1,39 @@
+documents:
+  - "./src/**/*.ts"
+  - "./src/**/*.tsx"
+
+emitLegacyCommonJSImports: false
+
+generates:
+  ./src/GraphQL/Generated/Requests.ts:
+    config:
+      gqlImport: "graphql-request#gql"
+      typesPrefix: "I"
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
+
+  ./src/GraphQL/Generated/Apollo.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+
+  ./src/GraphQL/Generated/ApolloHelpers.ts:
+    plugins:
+      - typescript-apollo-client-helpers:
+          useTypeImports: true
+
+# Prettier is disabled since rebuild will run projects concurrently and prettier will step on itself
+# hooks:
+#   afterAllFileWrite:
+#     # echo is used to get around the hooks passing in list of modified files that aren't accepted by our custom command
+#     - rush prettier && echo
+
+schema:
+  # - "../../services/**/*.graphql"
+  # - "src/**/*.graphql"
+  - "../../services/nest-gql/src/generated/schema.graphql"
+  - "../../services/express-gql-advanced/src/generated/schema.graphql"
+  - "../../services/express-gql/src/generated/schema.graphql"

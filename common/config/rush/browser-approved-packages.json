@@ -1,0 +1,314 @@
+// DO NOT ADD COMMENTS IN THIS FILE.  They will be lost when the Rush tool resaves it.
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
+  "packages": [
+    {
+      "name": "@apollo/client",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@apollo/server",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@apollo/subgraph",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@elastic/elasticsearch",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@emotion/react",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@emotion/styled",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@graphql-codegen/add",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@graphql-codegen/cli",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@graphql-codegen/schema-ast",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@graphql-codegen/typescript",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@graphql-codegen/typescript-apollo-client-helpers",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@graphql-codegen/typescript-graphql-request",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@graphql-codegen/typescript-operations",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@graphql-codegen/typescript-react-apollo",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@mui/icons-material",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@mui/material",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@nestjs/apollo",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@nestjs/cli",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@nestjs/common",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@nestjs/core",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@nestjs/graphql",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@nestjs/platform-express",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@nestjs/schematics",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@nestjs/testing",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@pothos/core",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@pothos/plugin-directives",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@pothos/plugin-errors",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@pothos/plugin-federation",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@pothos/plugin-scope-auth",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@pothos/plugin-simple-objects",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@tanstack/react-query",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@tsconfig/node-lts",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@vitejs/plugin-react-swc",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "antd",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "concurrently",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "cors",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "dayjs",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "dotenv",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-config-prettier",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-config-standard-with-typescript",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-import",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-n",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-prettier",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-promise",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "express",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "express-graphql",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "graphql",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "graphql-request",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "graphql-scalars",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "graphql-tag",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "mercurius",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "moment",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "nodemon",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "prettier",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "react",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "react-dom",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "react-hook-form",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "react-router-dom",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "reflect-metadata",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "rxjs",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "source-map-support",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "supertest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "ts-jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "ts-loader",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "ts-node",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "tsconfig-paths",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "typescript",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "use-debounce",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "uuid",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "vite",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "webpack",
+      "allowedCategories": [ "production" ]
+    }
+  ]
+}

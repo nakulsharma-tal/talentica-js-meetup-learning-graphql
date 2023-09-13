@@ -1,0 +1,7 @@
+type TestFilter {
+  displayName: String!
+}
+
+extend type Query {
+  testFilter: TestFilter!
+}

@@ -1,0 +1,689 @@
+{
+  "info": {
+    "_postman_id": "54df636a-1dae-49d9-9f8c-047635b31190",
+    "name": "Talentica_JS_Meetup-Learning_GraphQL",
+    "description": "## Services\n\n- `express-gql` - Readme for this app can be found [here](https://github.com/nakulsharma-tal/tal-js-meetup-learning-gql/blob/main/services/express-gql/README.md)\n    - Express GraphQL server with queries and mutations to get better understanding of the practical use cases. This service uses schema-first approach.\n    - Port: 4013\n- `express-gql-advanced` - Readme for this app can be found [here](https://github.com/nakulsharma-tal/tal-js-meetup-learning-gql/blob/main/services/express-gql-advanced/README.md)\n    - Express GraphQL server with code-first approach using Pothos and Codegen.\n    - Port: 4014\n- `express-gql-basic` - Readme for this app can be found [here](https://github.com/nakulsharma-tal/tal-js-meetup-learning-gql/blob/main/services/express-gql-basic/README.md)\n    - Basic Express GraphQL server with a single query to understand the GQL libraries and setup.\n    - Port: 4012\n- `nest-gql` - Readme for this app can be found [here](https://github.com/nakulsharma-tal/tal-js-meetup-learning-gql/blob/main/services/nest-gql/README.md)\n    - NestJS GraphQL server to understand how we can use GraphQL in NestJS environment.\n    - Port: 4011",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "8426619"
+  },
+  "item": [
+    {
+      "name": "express-gql-basic",
+      "item": [
+        {
+          "name": "1. basic query",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  message\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4012/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4012",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. query with args",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  greeting(name: \"Talentican\")\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4012/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4012",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. batch query",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  message\n  greeting(name: \"Talentican\")\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4012/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4012",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "health check (ping)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4012/ping",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4012",
+              "path": ["ping"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "## Express GraphQL Basic\n\n- Repo link [here](https://github.com/nakulsharma-tal/tal-js-meetup-learning-gql/blob/main/services/express-gql-basic/README.md)\n- Basic Express GraphQL server with a single query to understand the GQL libraries and setup."
+    },
+    {
+      "name": "express-gql",
+      "item": [
+        {
+          "name": "1. Get all authors",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allAuthors {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4013/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4013",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. Get all articles",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allArticles {\n        id\n        createdAt\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4013/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4013",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. Get all articles with author details",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allArticles {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4013/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4013",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Get article by ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    article (id: \"1e5cd08d-479e-4a3a-bdd3-4bdddbcaadc3\") {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4013/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4013",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5. Get author by ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    author(id: \"f47304c4-5e83-4982-bac6-c6fb3e87800e\") {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4013/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4013",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6. Create author",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    createAuthor(name: \"John Doe\") {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4013/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4013",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7. Create article",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    createArticle(authorId: \"f47304c4-5e83-4982-bac6-c6fb3e87800e\", tags: [\"tag1\", \"tag2\"], title: \"test title\", description: \"test description\", urls: [\"http://localhost:4013/ping\"]) {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4013/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4013",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8. Delete article",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    deleteArticle(id: \"1e5cd08d-479e-4a3a-bdd3-4bdddbcaadc3\") {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4013/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4013",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Health check (ping)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4014/ping",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["ping"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "## Express GraphQL\n\n- Repo link [here](https://github.com/nakulsharma-tal/tal-js-meetup-learning-gql/blob/main/services/express-gql/README.md).\n    \n- Express GraphQL server with queries and mutations to get better understanding of the practical use cases. This service uses schema-first approach."
+    },
+    {
+      "name": "express-gql-advanced",
+      "item": [
+        {
+          "name": "1. Get all authors",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allAuthors {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4014/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. Get all articles",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allArticles {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4014/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. Get all articles with author details",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allArticles {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4014/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Get article by ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    article (id: \"1e5cd08d-479e-4a3a-bdd3-4bdddbcaadc3\") {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4014/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5. Get author by ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    author(id: \"f47304c4-5e83-4982-bac6-c6fb3e87800e\") {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4014/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6. Create author",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    createAuthor(name: \"John Doe\") {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4014/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7. Create article",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    createArticle(authorId: \"f47304c4-5e83-4982-bac6-c6fb3e87800e\", tags: [\"tag1\", \"tag2\"], title: \"test title\", description: \"test description\", urls: [\"http://localhost:4013/ping\"]) {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4014/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8. Delete article",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    deleteArticle(id: \"1e5cd08d-479e-4a3a-bdd3-4bdddbcaadc3\") {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4014/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Health check (ping)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4014/ping",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4014",
+              "path": ["ping"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "## Express GraphQL Advanced\n\n- Repo link [here](https://github.com/nakulsharma-tal/tal-js-meetup-learning-gql/blob/main/services/express-gql-advanced/README.md).\n- Express GraphQL server with code-first approach using Pothos and Codegen."
+    },
+    {
+      "name": "nest-gql",
+      "item": [
+        {
+          "name": "1. Get all authors",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allAuthors {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4011/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. Get all articles",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allArticles {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4011/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. Get all articles with author details",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    allArticles {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4011/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Get article by ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    article (id: \"1e5cd08d-479e-4a3a-bdd3-4bdddbcaadc3\") {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4011/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5. Get author by ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n    author(id: \"f47304c4-5e83-4982-bac6-c6fb3e87800e\") {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4011/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6. Create author",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    createAuthor(name: \"John Doe\") {\n        id\n        name\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4011/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7. Create article",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    createArticle(input: {\n        authorId: \"f47304c4-5e83-4982-bac6-c6fb3e87800e\",\n        tags: [\"tag1\", \"tag2\"], \n        title: \"test title\", \n        description: \"test description\", \n        urls: [\"http://localhost:4013/ping\"]\n    }) {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4011/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8. Delete article",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation {\n    deleteArticle(id: \"1e5cd08d-479e-4a3a-bdd3-4bdddbcaadc3\") {\n        id\n        createdAt\n        author {\n            id\n            name\n        }\n        tags\n        title\n        description\n        urls\n    }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4011/graphql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["graphql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Health check (ping)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4011/ping",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4011",
+              "path": ["ping"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "## NestJS GraphQL\n\n- Repo link [here](https://github.com/nakulsharma-tal/tal-js-meetup-learning-gql/blob/main/services/nest-gql/README.md).\n    \n- NestJS GraphQL server to understand how we can use GraphQL in NestJS environment."
+    }
+  ]
+}
